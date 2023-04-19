@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Object Placement</string>
+    <string name="place_object">Place object</string>
+    <string name="new_object">New object</string>
+    <string name="instant_placement">Instant Placement</string>
+    <string name="depth_placement">Depth Placement</string>
+    <string name="plane_placement">Plane Placement</string>
+    <string name="best_placement">Best Placement</string>
+    <string name="testGPS">Test GPS</string>
+    <string translatable="false" name="geospatial_pose">LAT/LNG: %.6f˚, %.6f˚\n\t\t\tACCURACY: %.2fm\nALTITUDE: %.2fm\n\t\t\tACCURACY: %.2fm\nHEADING: %.1f˚\n\t\t\tACCURACY: %.1f˚</string>
+    <string name="earth_state">EarthState: %1$s\nTrackingState: %2$s\n%3$s</string>
+</resources>

@@ -1,0 +1,52 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "io.github.sceneview.sample.armodelviewer"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0.0"
+    }
+
+    buildTypes {
+        release {
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    aaptOptions {
+        noCompress 'filamat', 'ktx'
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
+
+    releaseImplementation "io.github.sceneview:arsceneview:0.9.1"
+    debugImplementation project(":arsceneview")
+
+    implementation 'de.javagl:obj:0.2.1'
+
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation "androidx.appcompat:appcompat:1.5.1"
+    implementation "androidx.fragment:fragment-ktx:1.5.5"
+
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'com.google.android.gms:play-services-auth:20+'
+    implementation 'com.google.android.gms:play-services-location:19+'
+    implementation 'com.google.android.gms:play-services-maps:18.0.2'
+}

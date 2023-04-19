@@ -1,0 +1,18 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        mavenLocal()
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "SceneView"
+include ':sceneview'
+include ':arsceneview'
+
+// Samples
+include ':ar-cursor-placement'
+project(':ar-cursor-placement').projectDir = new File('samples/ar-cursor-placement')
+include ':ar-model-viewer'
+project(':ar-model-viewer').projectDir = new File('samples/ar-model-viewer')
+include ':arapplication'
