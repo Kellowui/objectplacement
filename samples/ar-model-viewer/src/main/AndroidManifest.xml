@@ -21,13 +21,6 @@
             </intent-filter>
         </activity>
 
-        <meta-data
-            android:name="com.google.android.ar.API_KEY"
-            android:value="@string/GoogleCloudApiKey"/>
-
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="@string/GoogleCloudApiKey" />
 
     </application>
 </manifest>

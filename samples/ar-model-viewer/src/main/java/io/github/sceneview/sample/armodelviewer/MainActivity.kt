@@ -26,7 +26,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     lateinit var loadingView: View
     lateinit var placeModelButton: ExtendedFloatingActionButton
     lateinit var newModelButton: ExtendedFloatingActionButton
-//    lateinit var TestGPSButton: ExtendedFloatingActionButton
 
     data class Model(
         val fileLocation: String,
@@ -36,7 +35,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     )
 
     val models = listOf(
-//        Model("models/spiderbot.glb"),
         Model("models/spiderbot.glb",
 //            scaleUnits = 0.5f,
         ),
@@ -48,12 +46,15 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         ),
         Model("models/chair.glb",
 //            scaleUnits = 0.5f,
+            placementMode = PlacementMode.BEST_AVAILABLE,
         ),
         Model("models/drawer.glb",
+            placementMode = PlacementMode.BEST_AVAILABLE,
 //            scaleUnits = 0.5f,
         ),
         Model("models/bed.glb",
 //            scaleUnits = 0.5f,
+            placementMode = PlacementMode.INSTANT,
         ),
         Model(
             fileLocation = "https://storage.googleapis.com/ar-answers-in-search-models/static/GiantPanda/model.glb",
@@ -132,9 +133,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
             setOnClickListener { placeModelNode() }
         }
 
-//        TestGPSButton = findViewById<ExtendedFloatingActionButton>(R.id.testGPS).apply {
-//            setOnClickListener { testGPS() }
-//        }
+
 
         newModelNode()
     }
@@ -179,7 +178,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
                 glbFileLocation = model.fileLocation,
                 autoAnimate = true,
                 scaleToUnits = model.scaleUnits,
-                // Place the model origin at the bottom center
                 centerOrigin = Position(y = -1.0f)
             ) {
                 sceneView.planeRenderer.isVisible = true
@@ -196,13 +194,5 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         sceneView.selectedNode = modelNode
     }
 
-//    fun testGPS() {
-//        Snackbar.make(
-//            TestGPSButton,
-//            "123",
-//            Snackbar.LENGTH_SHORT
-//        ).show()
-////        sceneView.cloudAnchorEnabled = true
-//
-//    }
+
 }
